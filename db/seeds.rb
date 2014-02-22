@@ -17,7 +17,7 @@ CSV.parse(open(uri).read, headers: true) do |row|
   rep.fname = row['fname']
   rep.lname = row['lname']
   rep.longname = row['longname']
-  rep.city_state_zip = row['SOB_city_state_zip']
+  rep.city_state_zip = row['interimmailing_city'] + ", MN " + row['interim_mailing_zip'] 
   rep.twitter = row['twitter']
   rep.facebook_personal = row['facebook_personal']
   rep.you_tube = row['you_tube']
