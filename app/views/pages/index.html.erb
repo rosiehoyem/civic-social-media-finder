@@ -8,15 +8,26 @@
     </div>
   </div>
   <div class="col-md-4">
-    <a class="twitter-timeline" href="https://twitter.com/MNHouseInfo/current-house-members" data-widget-id="437306610868695040">Tweets from https://twitter.com/MNHouseInfo/current-house-members</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <a class="twitter-timeline" href="https://twitter.com/MNHouseInfo/current-house-members" data-widget-id="437306610868695040">Tweets
+      from https://twitter.com/MNHouseInfo/current-house-members</a>
+    <script>!function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+        if (!d.getElementById(id)) {
+            js = d.createElement(s);
+            js.id = id;
+            js.src = p + "://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }
+    }(document, "script", "twitter-wjs");</script>
   </div>
 
-<script>
-handler = Gmaps.build('Google');
-handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-  markers = handler.addMarkers(<%=raw @hash.to_json %>);
-  handler.bounds.extendWith(markers);
-  handler.fitMapToBounds();
-});
-</script>
+  <% content_for :javascripts do %>
+      <script type='text/javascript'>
+          handler = Gmaps.build('Google');
+          handler.buildMap({ provider: {}, internal: {id: 'map'}}, function () {
+              markers = handler.addMarkers(<%=raw @hash.to_json %>);
+              handler.bounds.extendWith(markers);
+              handler.fitMapToBounds();
+          });
+      </script>
+  <% end %>

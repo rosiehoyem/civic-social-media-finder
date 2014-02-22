@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 1.2'
 #Geocode + GoogleMaps
 gem 'geocoder'
 gem 'gmaps4rails'
+gem 'underscore-rails'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
