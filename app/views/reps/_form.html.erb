@@ -1,0 +1,61 @@
+<%= form_for(@rep) do |f| %>
+  <% if @rep.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rep.errors.count, "error") %> prohibited this rep from being saved:</h2>
+
+      <ul>
+      <% @rep.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :district_id %><br>
+    <%= f.text_field :district_id %>
+  </div>
+  <div class="field">
+    <%= f.label :partypol %><br>
+    <%= f.text_field :partypol %>
+  </div>
+  <div class="field">
+    <%= f.label :fname %><br>
+    <%= f.text_field :fname %>
+  </div>
+  <div class="field">
+    <%= f.label :lname %><br>
+    <%= f.text_field :lname %>
+  </div>
+  <div class="field">
+    <%= f.label :longname %><br>
+    <%= f.text_field :longname %>
+  </div>
+  <div class="field">
+    <%= f.label :city_state_zip %><br>
+    <%= f.text_field :city_state_zip %>
+  </div>
+  <div class="field">
+    <%= f.label :twitter %><br>
+    <%= f.text_field :twitter %>
+  </div>
+  <div class="field">
+    <%= f.label :facebook_personal %><br>
+    <%= f.text_field :facebook_personal %>
+  </div>
+  <div class="field">
+    <%= f.label :you_tube %><br>
+    <%= f.text_field :you_tube %>
+  </div>
+  <div class="field">
+    <%= f.label :linked_in %><br>
+    <%= f.text_field :linked_in %>
+  </div>
+  <div class="field">
+    <%= f.label :google_plus %><br>
+    <%= f.text_field :google_plus %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

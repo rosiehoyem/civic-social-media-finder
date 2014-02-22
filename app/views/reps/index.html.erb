@@ -1,0 +1,47 @@
+<h1>Listing reps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>District</th>
+      <th>Partypol</th>
+      <th>Fname</th>
+      <th>Lname</th>
+      <th>Longname</th>
+      <th>City state zip</th>
+      <th>Twitter</th>
+      <th>Facebook personal</th>
+      <th>You tube</th>
+      <th>Linked in</th>
+      <th>Google plus</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reps.each do |rep| %>
+      <tr>
+        <td><%= rep.district_id %></td>
+        <td><%= rep.partypol %></td>
+        <td><%= rep.fname %></td>
+        <td><%= rep.lname %></td>
+        <td><%= rep.longname %></td>
+        <td><%= rep.city_state_zip %></td>
+        <td><%= rep.twitter %></td>
+        <td><%= rep.facebook_personal %></td>
+        <td><%= rep.you_tube %></td>
+        <td><%= rep.linked_in %></td>
+        <td><%= rep.google_plus %></td>
+        <td><%= link_to 'Show', rep %></td>
+        <td><%= link_to 'Edit', edit_rep_path(rep) %></td>
+        <td><%= link_to 'Destroy', rep, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rep', new_rep_path %>
