@@ -67,6 +67,8 @@ GEM
       railties (>= 3.0.0)
     ffi (1.9.3)
     formatador (0.2.4)
+    geocoder (1.1.8)
+    gmaps4rails (2.1.1)
     guard (2.4.0)
       formatador (>= 0.2.4)
       listen (~> 2.1)
@@ -209,6 +211,8 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   database_cleaner
   factory_girl_rails
+  geocoder
+  gmaps4rails
   guard (>= 2.1.0)
   guard-rspec
   jbuilder (~> 1.2)
