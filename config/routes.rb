@@ -2,6 +2,7 @@ CivicSocialMediaFinder::Application.routes.draw do
   get "pages/index"
   get "pages/about"
   get "pages/team"
+  get "pages/help"
   resources :reps
 
 

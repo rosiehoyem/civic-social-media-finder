@@ -10,5 +10,6 @@
  *
  *= require bootstrap
  *= require bootswatch.min
+ *= require sticky-footer-navbar
  *= require_self
  */
