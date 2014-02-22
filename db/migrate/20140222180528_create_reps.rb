@@ -1,7 +1,7 @@
 class CreateReps < ActiveRecord::Migration
   def change
     create_table :reps do |t|
-      t.string :district_id
+      t.string :district
       t.string :partypol
       t.string :fname
       t.string :lname

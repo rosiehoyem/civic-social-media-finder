@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20140222190328) do
   enable_extension "plpgsql"
 
   create_table "reps", force: true do |t|
-    t.string   "district_id"
+    t.string   "district"
     t.string   "partypol"
     t.string   "fname"
     t.string   "lname"

@@ -5,3 +5,24 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+require 'csv'
+require 'open-uri'
+
+uri = "https://docs.google.com/spreadsheet/pub?key=0AhMzTTTIF_tudGZmcGFQTFdDS1V5RVd3ZTc1M19CeWc&output=csv"
+
+CSV.parse(open(uri).read, headers: true) do |row|
+  rep = Rep.where(district: row['district_id']).first_or_initialize
+  rep.partypol = row['partypol']
+  rep.fname = row['fname']
+  rep.lname = row['lname']
+  rep.longname = row['longname']
+  rep.city_state_zip = row['SOB_city_state_zip']
+  rep.twitter = row['twitter']
+  rep.facebook_personal = row['facebook_personal']
+  rep.you_tube = row['you_tube']
+  rep.linked_in = row['linked_in']
+  rep.google_plus = row['google+']
+  rep.save!
+  puts "Updated info for #{rep.to_s}"
+end
