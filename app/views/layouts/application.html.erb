@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CivicSocialMediaFinder</title>
+  <title>Photo Tournament</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <%=link_to "Civic Social Media Finder", root_path, class: "navbar-brand" %>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
 <%= yield %>
+
+</div>
+
+<div id="footer">
+  <div class="container">
+    <p class="text-muted pull-right">
+          <a href="https://github.com/rosiehoyem/civic-social-media-finder">GitHub Repository</a>  |  <%= link_to "Our Team", pages_team_path %> 
+      </p>
+  </div>
+</div>
 
 </body>
 </html>
