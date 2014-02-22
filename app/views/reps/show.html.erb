@@ -2,7 +2,7 @@
 
 <p>
   <strong>District:</strong>
-  <%= @rep.district_id %>
+  <%= @rep.district %>
 </p>
 
 <p>
@@ -32,12 +32,12 @@
 
 <p>
   <strong>Twitter:</strong>
-  <%= @rep.twitter %>
+  <%= twitter_link(@rep, @rep.twitter) %>
 </p>
 
 <p>
   <strong>Facebook personal:</strong>
-  <%= @rep.facebook_personal %>
+  <%= facebook_link(@rep, @rep.facebook_personal) %>
 </p>
 
 <p>
