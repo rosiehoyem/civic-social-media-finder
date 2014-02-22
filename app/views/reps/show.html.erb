@@ -1,3 +1,6 @@
+<div class="row">
+  <div class="col-md-6">
+    <h1><%= @rep.longname %></h1>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -6,27 +9,12 @@
 </p>
 
 <p>
-  <strong>Partypol:</strong>
+  <strong>Political Party:</strong>
   <%= @rep.partypol %>
 </p>
 
 <p>
-  <strong>Fname:</strong>
-  <%= @rep.fname %>
-</p>
-
-<p>
-  <strong>Lname:</strong>
-  <%= @rep.lname %>
-</p>
-
-<p>
-  <strong>Longname:</strong>
-  <%= @rep.longname %>
-</p>
-
-<p>
-  <strong>City state zip:</strong>
+  <strong>Location:</strong>
   <%= @rep.city_state_zip %>
 </p>
 
@@ -39,21 +27,33 @@
   <strong>Facebook personal:</strong>
   <%= facebook_link(@rep, @rep.facebook_personal) %>
 </p>
+  </div>
+  <div class="col-md-6">
+    <a class="twitter-timeline" href="https://twitter.com/<%= @rep.twitter %>" data-widget-id="437306610868695040">Tweets
+      from https://twitter.com/<%= @rep.twitter %></a>
+    <script>!function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+        if (!d.getElementById(id)) {
+            js = d.createElement(s);
+            js.id = id;
+            js.src = p + "://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }
+    }(document, "script", "twitter-wjs");</script>
+  </div>
 
-<p>
-  <strong>You tube:</strong>
-  <%= @rep.you_tube %>
-</p>
+  <% content_for :javascripts do %>
+      <script type='text/javascript'>
+          handler = Gmaps.build('Google');
+          handler.buildMap({ provider: {}, internal: {id: 'map'}}, function () {
+              markers = handler.addMarkers(<%=raw @hash.to_json %>);
+              handler.bounds.extendWith(markers);
+              handler.fitMapToBounds();
+          });
+      </script>
+  <% end %>
 
-<p>
-  <strong>Linked in:</strong>
-  <%= @rep.linked_in %>
-</p>
 
-<p>
-  <strong>Google plus:</strong>
-  <%= @rep.google_plus %>
-</p>
 
 <%= link_to 'Edit', edit_rep_path(@rep) %> |
 <%= link_to 'Back', reps_path %>
